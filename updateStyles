@@ -1,0 +1,16 @@
+var countdownEle = document.getElementById('countdown');
+var bgImage= document.getElementById('bg-image');
+
+var initialCountDown = countdownEle.innerHTML;
+
+setInterval(function() {
+  initialCountDown = initialCountDown > 0 ? initialCountDown-1 :0;
+  
+  countdownEle.innerHTML = initialCountDown;
+  
+  var bgImgpath = initialCountDown % 2 === 0 ? '../bg1.jpg' : '../bg2.jpg';
+  
+  bgImage.src = bgImgpath;
+  
+  console.log('Interval Running');
+ }, 1000);
